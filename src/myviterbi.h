@@ -3,9 +3,9 @@
 //
 // Code generated for Simulink model 'myviterbi'.
 //
-// Model version                  : 1.9
+// Model version                  : 1.17
 // Simulink Coder version         : 8.12 (R2017a) 16-Feb-2017
-// C/C++ source code generated on : Wed Aug  2 20:54:25 2017
+// C/C++ source code generated on : Mon Aug  7 12:01:00 2017
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -52,8 +52,8 @@ typedef struct {
 typedef struct {
   int32_T stateMetric[64];             // '<Root>/Viterbi Decoder'
   int32_T tbPtr;                       // '<Root>/Viterbi Decoder'
-  uint32_T tbState[16448];             // '<Root>/Viterbi Decoder'
-  uint32_T tbInput[16448];             // '<Root>/Viterbi Decoder'
+  uint32_T tbState[4160];              // '<Root>/Viterbi Decoder'
+  uint32_T tbInput[4160];              // '<Root>/Viterbi Decoder'
   uint8_T preDecodVect[48384];         // '<Root>/Viterbi Decoder'
   boolean_T expEraPuncVect[48384];     // '<Root>/Viterbi Decoder'
   boolean_T ViterbiDecoder[24192];     // '<Root>/Viterbi Decoder'

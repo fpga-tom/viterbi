@@ -3,9 +3,9 @@
 //
 // Code generated for Simulink model 'myviterbi'.
 //
-// Model version                  : 1.9
+// Model version                  : 1.17
 // Simulink Coder version         : 8.12 (R2017a) 16-Feb-2017
-// C/C++ source code generated on : Wed Aug  2 20:54:25 2017
+// C/C++ source code generated on : Mon Aug  7 12:01:00 2017
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -159,20 +159,20 @@ void myviterbiModelClass::step()
     // Traceback decoding
     bitIdx = rtDW.tbPtr;
     input = 0U;
-    for (i = 0; i < 257; i++) {
+    for (i = 0; i < 65; i++) {
       input = rtDW.tbInput[(bitIdx << 6) + intVal];
       intVal = rtDW.tbState[(bitIdx << 6) + intVal];
       if (bitIdx > 0) {
         bitIdx--;
       } else {
-        bitIdx = 256;
+        bitIdx = 64;
       }
     }
 
     rtDW.ViterbiDecoder[j] = ((input & 1U) != 0U);
 
     // Increment (mod TbDepth) the traceback index and store
-    if (rtDW.tbPtr < 256) {
+    if (rtDW.tbPtr < 64) {
       rtDW.tbPtr++;
     } else {
       rtDW.tbPtr = 0;
